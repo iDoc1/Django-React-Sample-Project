@@ -1,0 +1,1 @@
+Sample Project using a Django backend and React frontent
