@@ -11,6 +11,8 @@ to create an optimized React build, which creates a build/ directory, then serve
 files directly from the Django server. Both of these approaches are described below.
 
 ## Installing Dependencies
+- First, create a Python virtual environment by running `python -m venv .venv` from root
+project directory. This ensures python dependencies are installed locally.
 - From the root directory run `pip install -r requirements.txt` to install Django 
 dependencies
 - cd into the frontend directory and run `npm install` to install node modules
