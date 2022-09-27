@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,10 +16,16 @@ function AddQuotePage() {
             author: author
         };
 
+        // Must include CSRF token in order for Django to authenticate request
+        const csrfToken = Cookies.get('csrftoken');
+
         let response = await fetch('/api/quotes/', {
             method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(postObject)
+            headers: {
+                'Content-Type':'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify(postObject),
         });
 
         if (response.status === 201) {

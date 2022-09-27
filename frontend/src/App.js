@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ViewQuotesPage from './pages/ViewQuotesPage';
 import AddQuotePage from './pages/AddQuotePage';
@@ -7,13 +7,13 @@ import AddQuotePage from './pages/AddQuotePage';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/view-quotes' element={<ViewQuotesPage />} />
             <Route path='/add-quote' element={<AddQuotePage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

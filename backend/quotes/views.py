@@ -9,7 +9,6 @@ class QuotesView(viewsets.ModelViewSet):
     API endpoints that allows Quotes to be viewed or edited
     """
     serializer_class = QuotesSerializer
-    # queryset = Quote.objects.all()
 
     def get_queryset(self):
         """
